@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# 🐶 나의 첫 TodoList
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+항해 99 3주차 React 입문주차 개인과제에 처음으로 React로 만들어 보았다.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+### 구현기능
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Todo 추가하기
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- 제목과 내용을 입력하고 추가하기 누르면 Working.. 🔥 아래에 새로운 Todo 생성후 input 입력창 초기화
 
-### `npm test`
+2. Todo 상태에 따른 위치 배치
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Todo를 완료하기 전이면 Working.. 🔥 라인, Done..! 🎉 라인에 생기며, 취소, 완료에 따른 상태 변화
+- 삭제하기 버튼 누르면 TodoList에서 삭제
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Trouble Shooting
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. 파일 import 할때 vscolde에서 자동생성으로 입력시 대소문자 구별못해서 에러 발생
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+Failed to compile.
 
-### `npm run eject`
+Module not found: Error: Cannot find file: 'Todolist.jsx' does not match the corresponding name on disk: './src/pages/TodoList.jsx'.
+ERROR in ./src/components/layout/Layout.jsx 7:0-44
+Module not found: Error: Cannot find file: 'Todolist.jsx' does not match the corresponding name on disk: './src/pages/TodoList.jsx'.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+webpack compiled with 1 error
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- 대소문자 입력 확인 필요!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. button 사용하여 추가하기 버튼 누르면 추가즉시 새로고침..
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- form 태그안에 button 태그 사용시 tpye 확인!!
 
-## Learn More
+혹시 form 안에서 버튼을 클릭했을 때 새로고침이 된 적 없으신가요? 바로 이것 때문이었습니다.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+만약 어떤 이유로 특정 영역을 form 태그로 감싸게 된다면, 그 안에 있던 타입 명시 없는 버튼은 모두 **submit** 버튼으로 동작합니다.
+그래서 이때 버튼을 클릭하면 페이지가 급뜬금 새로고침 되죠!
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. A component is changing an uncontrolled input to be controlled.
 
-### Code Splitting
+```
+A component is changing an uncontrolled input to be controlled. This is likely caused by the value changing from undefined to a defined value, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component.
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- 인풋창을 입력하는 순간 이런 에러가 뜨더라.. input value 로 undefined 가 들어간다고 에러메세지를 띄운것이다..
+- Form 태그 안에 key : value 의 이름 또는 대소문자 확인... 누구에게 설명하다가 확인되어 고치니 정상작업이 된당!
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+처음으로 React로 만들어 봤는데 아직까지도 어렵다...
+가장 기본적인 state , props 등등..
+배울게 아직 많지만 앞으로 더 노력 해봐야겠다.
