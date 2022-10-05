@@ -3,6 +3,7 @@
 ---
 
 항해 99 3주차 React 입문주차 개인과제에 처음으로 React로 만들어 보았다.
+![initial](https://user-images.githubusercontent.com/112137813/193992953-9445191f-e68b-40ce-b844-28e4d0bc14b7.png)
 
 ---
 
