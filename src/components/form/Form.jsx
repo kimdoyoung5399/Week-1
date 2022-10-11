@@ -11,6 +11,7 @@ function Form({ texts, setTexts }) {
   };
 
   const [inputs, setInputs] = useState(initialState);
+
   const { title, body } = inputs;
 
   const onChange = (e) => {
